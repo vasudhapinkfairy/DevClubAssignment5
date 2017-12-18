@@ -1,17 +1,17 @@
-value=0;
+val=0;
 while IFS=' ' read f s
 do
 	if [ "$s" == "+" ];
 	then
-		value=$((value + f))
+		val=$((val + f))
 	elif [ "$s" == "-" ];
 	then
-		value=$((value - f))
+		val=$((val - f))
 	elif [ "$s" == "*" ];
 	then
-		value=$((value * f))
+		val=$((val * f))
 	else
-		value=$((value / f))
+		val=$((val / f))
 	fi
 done < "$1"
-echo "$value"
+echo "$val"
